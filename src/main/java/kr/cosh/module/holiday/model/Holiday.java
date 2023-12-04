@@ -16,7 +16,7 @@ public class Holiday {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String dateName;
-    private String desc;
+    private String description;
     private LocalDate date;
 
 }

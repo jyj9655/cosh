@@ -84,7 +84,7 @@ public class HolidayService {
         Holiday holiday = new Holiday();
         holiday.setDateName((String) holidayData.get("dateName"));
         holiday.setDate(convertIntToDate((Integer) holidayData.get("locdate")));
-        holiday.setDesc("공휴일");
+        holiday.setDescription("공휴일");
         return holiday;
     }
 
