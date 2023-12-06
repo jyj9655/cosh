@@ -8,14 +8,14 @@ external:
 spring:
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/coshdb
+    url: jdbc:postgresql://141.164.44.206:5432/coshdb
     username: cosh
     password: 1234
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: none # 개발시에는 update, 실제 운영시에는 none을 추천
+      ddl-auto: update # 개발시에는 update, 실제 운영시에는 none을 추천
     show-sql: true
     properties:
       hibernate:
