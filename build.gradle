@@ -44,3 +44,21 @@ tasks.named('bootBuildImage') {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// 현재 프로필을 지정하는 프로젝트 속성 설정
+if (project.hasProperty('profile')) {
+	ext.activeProfile = project.getProperty('profile')
+} else {
+	ext.activeProfile = 'dev' // 기본값으로 dev를 사용
+}
+
+processResources {
+	filesMatching("**/application-*.yml") {
+		expand(project: project)
+	}
+	// 활성화된 프로파일에 따라 리소스를 필터링
+	from('src/main/resources') {
+		include "application-${activeProfile}.yml"
+		into 'config'
+	}
+}
